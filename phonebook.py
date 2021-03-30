@@ -13,13 +13,13 @@ class NewPerson():
     self.number = number
     self.address = address
 
+
 #Main function
 def main():
   # Load existing data from csv file
   with open('directory.csv', 'r') as f:
     reader = csv.reader(f)
     data = list(reader)
-
     #Append to directory list as objects
     for element in data:
       person = NewPerson(element[0], element[1], element[2])
@@ -98,6 +98,7 @@ def displayAll():
 def search():
   #Get name of person to search for
   searchBy = input("Whose contact info would you like to see: ")
+  #Variable to track if person is found
   found = False
   
   #Iterate through list and dislpay the person's data if found
@@ -117,9 +118,10 @@ def search():
 def delete():
   #Get name of person to remove
   delete_element = input("Whose contact would you like to remove: ")
+  #Variable to track if person is removed
   removed = False
 
-  #Iterate through list to find remove person
+  #Iterate through list and remove person if found
   for i in directory_list:
     if i.name == delete_element:
       directory_list.remove(i)
