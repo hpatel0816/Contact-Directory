@@ -23,7 +23,6 @@ def main():
     #Append to directory list as objects
     for element in data:
       person = NewPerson(element[0], element[1], element[2])
-      global directory_list
       directory_list.append(person)
   
   #Welcome message
